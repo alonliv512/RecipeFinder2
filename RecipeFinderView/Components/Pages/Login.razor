@@ -1,0 +1,49 @@
+﻿@page "/login"
+@using RecipeFinderView.Components.Shared
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;" dir="rtl">
+
+    <div class="card bg-white shadow-lg p-5 rounded-brand border-0 text-end" style="max-width: 450px; width: 100%;">
+
+        <div class="text-center mb-4">
+            <span class="bg-danger text-white rounded-circle d-inline-flex justify-content-center align-items-center shadow-sm fs-4 mb-2" style="width: 50px; height: 50px;">
+                🍪
+            </span>
+            <h2 class="fw-bold text-dark mt-2">התחברות ל-RecipeFinder</h2>
+            <p class="text-muted small">התחברו כדי ליהנות ממתכונים, מועדפים והעלאת מנות משלכם</p>
+        </div>
+
+        <div>
+            <div class="mb-3">
+                <label class="form-label text-secondary fw-semibold small">שם משתמש או אימייל</label>
+                <input type="text" class="form-control bg-light py-2" placeholder="name@example.com" @bind="username" />
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label text-secondary fw-semibold small">סיסמה</label>
+                <input type="password" class="form-control bg-light py-2" placeholder="********" @bind="password" />
+            </div>
+
+            <button type="button" class="btn w-100 py-2 fw-bold text-white mb-3 shadow-sm" style="background-color: #4A7C59;" @onclick="HandleLogin">
+                התחבר למערכת
+            </button>
+
+            <div class="text-center">
+                <span class="text-muted small">עדיין אין לכם חשבון? </span>
+                <a href="/register" class="text-decoration-none fw-bold" style="color: #E05A47;">הצטרפו אלינו בהרשמה חינם</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    private string username = "";
+    private string password = "";
+
+    private void HandleLogin()
+    {
+        // כאן נחבר בהמשך את הלוגיקה ל-API או ל-DB
+    }
+}

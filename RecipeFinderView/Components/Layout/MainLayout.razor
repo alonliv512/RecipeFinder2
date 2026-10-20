@@ -1,23 +1,40 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
+<!-- ======================================================== -->
+<!-- סרגל ניווט עליון (Navbar) - מסודר ונקי מימין לשמאל -->
+<!-- ======================================================== -->
+<header class="bg-white shadow-sm py-3 px-4 d-flex justify-content-between align-items-center">
+
+    <!-- 1. צד ימין: לוגו ושם האתר RecipeFinder -->
+    <div class="d-flex align-items-center gap-2">
+        <span class="bg-danger text-white rounded-circle d-inline-flex justify-content-center align-items-center shadow-sm fs-5" style="width: 40px; height: 40px;">
+            🍪
+        </span>
+        <span class="fw-bold fs-4 text-dark">RecipeFinder</span>
     </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+    <!-- 2. מרכז: כפתור חזרה מהירה לדף הבית -->
+    <nav class="d-flex gap-3 fw-semibold">
+        <a href="/" class="text-decoration-none text-dark d-flex align-items-center gap-1">
+            <i class="bi bi-house-door"></i> דף הבית
+        </a>
+    </nav>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+    <!-- 3. צד שמאל: כפתורי פעולה (כניסה ומועדפים) -->
+    <div class="d-flex align-items-center gap-2">
+        <a href="/login" class="btn btn-brand-green d-flex align-items-center gap-2">
+            <i class="bi bi-person"></i> כניסה
+        </a>
+        <button class="btn btn-light rounded-circle shadow-sm p-2 text-secondary" style="width: 42px; height: 42px;" title="המועדפים שלי">
+            <i class="bi bi-heart"></i>
+        </button>
+    </div>
 
-<div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-</div>
+</header>
+
+<!-- ======================================================== -->
+<!-- אזור התוכן הדינמי -->
+<!-- ======================================================== -->
+<main>
+    @Body
+</main>

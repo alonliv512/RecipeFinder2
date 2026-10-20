@@ -1,7 +1,141 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<!-- ======================================================== -->
+<!-- דף הבית (Home.razor) - דף נחיתה למשתמשים אורחים -->
+<!-- ======================================================== -->
 
-<h1>Hello, world!</h1>
+<div class="container-fluid px-0">
 
-Welcome to your new app.
+    <!-- ======================================================== -->
+    <!-- 1. אזור ה-Hero (הבאנר הראשי עם תמונת האווירה) -->
+    <!-- ======================================================== -->
+    <div class="hero-section position-relative text-white text-center py-5 mb-5"
+         style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+        <!-- כותרת ראשית שובה לב -->
+        <h1 class="fw-bold display-4 mb-3">מה מתבשל אצלך היום?</h1>
+        <p class="fs-5 mb-4 text-light opacity-75">אלפי מתכונים ביתיים, טעימים וקלים – בדיוק בשבילך.</p>
+
+        <!-- תיבת ההסבר המזמינה למשתמש אורח -->
+        <div class="card bg-white text-dark p-4 shadow-lg rounded-brand mx-3" style="max-width: 650px; width: 100%;">
+            <p class="fs-5 fw-semibold mb-2 text-dark">
+                🍳 אפשר לחפש מתכונים לפי מגוון קטגוריות או אפילו לפי המצרכים במקרר...
+            </p>
+            <p class="text-muted small mb-0">
+                התחברו או היכנסו לחשבון שלכם כדי ליהנות מחיפוש חכם ושמירת מועדפים.
+            </p>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 2. תצוגה מקדימה של קטגוריות מתכונים -->
+    <!-- ======================================================== -->
+    <div class="container mb-5">
+        <div class="row align-items-center g-4">
+            <!-- תמונת המחשה קולינרית -->
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80" alt="מגוון מתכונים" class="img-fluid rounded-brand shadow-sm">
+            </div>
+            <!-- טקסט ותגיות קטגוריות -->
+            <div class="col-lg-6">
+                <h3 class="fw-bold text-dark mb-3">גלה סוגי מתכונים חדשים</h3>
+                <p class="text-muted mb-4">הכל במקום אחד, מסודר בקטגוריות שקל ונעים לגלות – מארוחות בוקר מהירות ועד קינוחים מושחתים.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-sm fs-6">🥗 סלטים ובריאות</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-sm fs-6">⏱️ מהיר וקל</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-sm fs-6">🌿 טבעוני וצמחוני</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-sm fs-6">🍳 ארוחות בוקר</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 3. אזור העלאת מתכונים אישיים (על בסיס הסקיצה שהבאת) -->
+    <!-- ======================================================== -->
+    <div class="container mb-5 py-4 bg-light rounded-brand border">
+        <div class="row align-items-center px-3">
+
+            <!-- צד ימין: טקסט הסבר והתגיות של מה שזה מאפשר למשתמש -->
+            <div class="col-lg-6 mb-4 mb-lg-0 text-end">
+                <span class="text-danger fw-bold small">המטבח שלכם, הסיפור שלכם</span>
+                <h2 class="fw-bold display-6 text-dark mt-1 mb-3">אתם יכולים להעלות גם את המתכונים שלכם</h2>
+                <p class="text-muted mb-4">המתכון המשפחתי המנצח שלכם ראוי להגיע לעוד שולחנות.</p>
+
+                <!-- תגיות תחתונות להמחשת היתרונות -->
+                <div class="d-flex flex-wrap gap-2 justify-content-end">
+                    <span class="badge bg-white text-dark border px-3 py-2 shadow-sm">שומרים במקום אחד</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 shadow-sm">משתפים עם הקהילה</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 shadow-sm">מקבלים תגובות ודירוגים</span>
+                </div>
+            </div>
+
+            <!-- צד שמאל: הדגמה ויזואלית של טופס הוספת מתכון -->
+            <div class="col-lg-6">
+                <div class="card bg-white border-0 shadow-lg p-4 rounded-brand" style="opacity: 0.95;">
+
+                    <!-- אזור העלאת תמונה דמה -->
+                    <div class="border border-2 border-dashed rounded-3 p-3 text-center mb-3 bg-light text-muted">
+                        <div class="fs-4 text-success fw-bold">+</div>
+                        <small>הוספת תמונה</small>
+                    </div>
+
+                    <!-- שדות טופס דמה להמחשת העיצוב -->
+                    <div class="mb-2">
+                        <label class="form-label small text-muted">שם המתכון</label>
+                        <div class="form-control bg-light text-secondary form-control-sm">המתכון המיוחד שלי</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label class="form-label small text-muted">קטגוריה</label>
+                            <div class="form-control bg-light text-secondary form-control-sm">ארוחה ביתית</div>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label small text-muted">זמן הכנה</label>
+                            <div class="form-control bg-light text-secondary form-control-sm">30 דקות</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small text-muted">כמה מילים על המתכון</label>
+                        <div class="form-control bg-light text-secondary form-control-sm" style="height: 40px;">כאן תוכלו לספר מה הפך את המתכון שלכם למיוחד...</div>
+                    </div>
+
+                    <!-- כפתור פרסום מושבת (לתצוגה בלבד בדף הבית) -->
+                    <button class="btn btn-brand-orange w-100 py-2 fw-bold text-white" style="background-color: #E05A47;" disabled>
+                        פרסום המתכון
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 4. אזור שמירת מועדפים ודירוגים (ללא שורת הדירוג המספרי) -->
+    <!-- ======================================================== -->
+    <div class="container mb-5">
+        <div class="p-4 bg-white rounded-brand shadow-sm border text-center">
+            <h4 class="fw-bold text-dark mb-2">⭐ תוכלו לשמור את המתכונים המועדפים</h4>
+            <p class="text-muted mb-3">לדרג מנות, לחוות דעה ולנהל את ספר המתכונים האישי שלכם בקלות.</p>
+            <div class="text-warning fs-4">
+                ★★★★★
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 5. אזור הנעה לפעולה (Call to Action) תחתון -->
+    <!-- ======================================================== -->
+    <div class="container mb-5">
+        <div class="p-5 rounded-brand text-white text-center" style="background-color: var(--brand-green);">
+            <h2 class="fw-bold mb-3">רוצים להתחיל לבשל איתנו?</h2>
+            <p class="mb-4 opacity-75">הצטרפו לקהילה שלנו ושמרו את המתכונים האהובים עליכם.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/login" class="btn btn-light text-success fw-bold px-4 py-2 rounded-pill shadow-sm">התחברות</a>
+                <a href="/register" class="btn btn-brand-orange px-4 py-2 rounded-pill shadow-sm">הרשמה חינם</a>
+            </div>
+        </div>
+    </div>
+
+</div>

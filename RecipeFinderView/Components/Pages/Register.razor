@@ -1,0 +1,74 @@
+﻿@page "/register"
+
+<!-- מעטפת ראשית המרכזת את טופס ההרשמה באמצע המסך עם התאמה ל-RTL -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;" dir="rtl">
+
+    <!-- כרטיס לבן מרכזי עם צללית ופינות עגולות המעוצב לפי שפת המותג -->
+    <div class="card bg-white shadow-lg p-5 rounded-brand border-0 text-end" style="max-width: 450px; width: 100%;">
+
+        <!-- אזור הלוגו, הכותרת הראשית ותיאור קצר למשתמש החדש -->
+        <div class="text-center mb-4">
+            <span class="bg-danger text-white rounded-circle d-inline-flex justify-content-center align-items-center shadow-sm fs-4 mb-2" style="width: 50px; height: 50px;">
+                🍪
+            </span>
+            <h2 class="fw-bold text-dark mt-2">הצטרפו ל-RecipeFinder</h2>
+            <p class="text-muted small">הירשמו כדי לגלות אלפי מתכונים חדשים ולשתף את המנות שלכם</p>
+        </div>
+
+        <!-- אזור הטופס ושדות הקלט -->
+        <div>
+
+            <!-- שדה להזנת שם מלא -->
+            <div class="mb-3">
+                <label class="form-label text-secondary fw-semibold small">שם מלא</label>
+                <input type="text" class="form-control bg-light py-2" placeholder="ישראל ישראלי" @bind="fullName" />
+            </div>
+
+            <!-- שדה להזנת כתובת אימייל (יעודכן בהמשך גם בטבלת מסד הנתונים) -->
+            <div class="mb-3">
+                <label class="form-label text-secondary fw-semibold small">כתובת אימייל</label>
+                <input type="email" class="form-control bg-light py-2" placeholder="name@example.com" @bind="email" />
+            </div>
+
+            <!-- שדה להזנת סיסמה ראשונית -->
+            <div class="mb-3">
+                <label class="form-label text-secondary fw-semibold small">סיסמה</label>
+                <input type="password" class="form-control bg-light py-2" placeholder="********" @bind="password" />
+            </div>
+
+            <!-- שדה חדש: אימות סיסמה (וידוא התאמה) -->
+            <div class="mb-4">
+                <label class="form-label text-secondary fw-semibold small">אימות סיסמה</label>
+                <input type="password" class="form-control bg-light py-2" placeholder="********" @bind="confirmPassword" />
+            </div>
+
+            <!-- כפתור הרשמה למערכת בצבע ירוק ממותג המפעיל את פונקציית הלוגיקה -->
+            <button type="button" class="btn w-100 py-2 fw-bold text-white mb-3 shadow-sm" style="background-color: #4A7C59;" @onclick="HandleRegister">
+                הירשם למערכת
+            </button>
+
+            <!-- אזור מעבר למשתמשים קיימים שכבר יש ברשותם חשבון -->
+            <div class="text-center">
+                <span class="text-muted small">כבר יש לכם חשבון? </span>
+                <a href="/login" class="text-decoration-none fw-bold" style="color: #E05A47;">התחברו כאן</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    // הגדרת משתנים לשמירת נתוני הקלט של המשתמש בטופס (כולל אימות הסיסמה)
+    private string fullName = "";
+    private string email = "";
+    private string password = "";
+    private string confirmPassword = "";
+
+    // פונקציית לוגיקה שמטפלת בלחיצה על כפתור ההרשמה
+    private void HandleRegister()
+    {
+        // כאן נחבר בהמשך את הלוגיקה לבדיקת התאמת הסיסמאות ויצירת משתמש חדש מול ה-API או מסד הנתונים
+    }
+}
